@@ -31,7 +31,7 @@ for p in transchoice:
 
         day, year = time[:], 2012
         xL.append(pd.to_datetime(day-1, unit='D', origin=str(year)))
-        xL=np.array(xL[0])                                                           # xL n'est pas une liste 1D mais deux listes !
+        xL=np.array(xL[0])                                                          
 
         plt.gca().invert_yaxis()           
 
@@ -51,6 +51,3 @@ for p in transchoice:
         plt.gca().invert_yaxis() 
         plt.savefig('rho' + str(p) + '.png')
         
-        
-        
-#control+ c --> stopper tout
