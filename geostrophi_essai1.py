@@ -36,7 +36,7 @@ for p in transchoice:
         
         for j in range(len(rad)) :
         
-            hdyn=geodyn(S[j, :], T[j, :], P[:], p_ref=P[np.where(S))
+            hdyn=geodyn(S[j, :], T[j, :], P[:], p_ref)   #p_ref =P[np.where(...) 
             print(hdyn)
             v = v_geo(hdyn[:],lon[j],lat[j]) 
 
