@@ -92,7 +92,7 @@ for p in transchoice:
     plt.clim(-0.6,0.6)
     plt.rcParams['xtick.labelsize'] = 35
     plt.rcParams['ytick.labelsize'] = 35
-    Resolution=u_normal    # Sur quoi porte la colorbar (norme ou autre)
+    Resolution=u_normal    
     mymap.quiver(X,Y,0 ,u_normal , Resolution, width=0.0050, scale=3, cmap='seismic') 
     mymap.quiver(X3,Y3,0 ,u_normal3 , u_normal3, width=0.0050, scale=3, cmap='seismic') 
 
