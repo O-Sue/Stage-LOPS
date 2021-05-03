@@ -76,7 +76,7 @@ plt.subplot(2, 1, 2)
 u2=np.transpose(v)                 
 a=plt.pcolormesh(s2,depth2, u2) 
 plt.gca().invert_yaxis() 
-plt.gcf().set_size_inches(15, 10)   ###taille figure 
+plt.gcf().set_size_inches(15, 10)   
 plt.clim(-0.4,0.8) 
 plt.colorbar(aspect=10) 
 plt.ylabel("depth (m)", size = 14)
