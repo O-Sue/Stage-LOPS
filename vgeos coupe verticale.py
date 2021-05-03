@@ -17,7 +17,7 @@ sigma = 0.7
 IMEDIA = xr.open_dataset("profil12_vgeos.nc", decode_times=True)
 IMEDIA2 = xr.open_dataset('profil12_geos.nc', decode_times=True)
 density=IMEDIA2['PRHO'] 
-density = (density[0:]+density[:-1])/2   #Réduis la taille de 1 en moyennant
+density = (density[0:]+density[:-1])/2   
 latx=IMEDIA['LAT'] 
 lonx=IMEDIA['LON'] 
 latx= np.array(latx.data)
@@ -27,7 +27,7 @@ lat=IMEDIA['LAT']
 lon=IMEDIA['LON'] 
 lat= np.array(lat.data)
 lon= np.array(lon.data)
-vgeo=IMEDIA['VGEO']                         #vgeo.shape renvoi (60, 50) donc choix d'une profondeur particulière
+vgeo=IMEDIA['VGEO']                         
 vgeo= np.array(vgeo.data)
 P=IMEDIA['P'] 
 xL=[0]
@@ -57,7 +57,7 @@ for i in range (len(lat)-1):
         s=sum(xL)
         
             
-for i  in range (len(xL)-1):       #pas besoin de recréer une liste
+for i  in range (len(xL)-1):       
         
         xL[i+1]=xL[i]+xL[i+1]
         
@@ -78,6 +78,5 @@ dens=gaussian_filter(dens, sigma)
 cont=plt.contour(s2, depth2, dens, 5, colors="black")
 plt.clabel(cont, inline=True, fontsize= 30)
 plt.clim(-0.6,0.6)  
-#plt.colorbar(aspect=10) 
 plt.ylabel("depth (m)", size = 35, position=(1,0.95))
 plt.savefig("anomaliesdensitépotentielleisopycne"+".png")
