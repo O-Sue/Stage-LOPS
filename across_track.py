@@ -20,14 +20,14 @@ for p in transchoice:
     
     IMEDIA = xr.open_dataset("profil" + str(p) + "_vgeos.nc", decode_times=True)
     IMEDIA2 = xr.open_dataset("courants_IMEDIA_TIE1205sk_15032012_radialMVP" + str(p) + ".nc", decode_times=True)
-    IMEDIA3 = xr.open_dataset("courants_IMEDIA_TIE1205sk_15032012_radialMVP10.nc ", decode_times=True)   # espace d'enfer, des fois oui des fois non
+    IMEDIA3 = xr.open_dataset("courants_IMEDIA_TIE1205sk_15032012_radialMVP10.nc ", decode_times=True)   # espace des fois oui des fois non
     IMEDIA4 = xr.open_dataset("profil10_vgeos.nc", decode_times=True)
 
     lat=IMEDIA['LAT'] 
     lon=IMEDIA['LON'] 
     lat= np.array(lat.data)
     lon= np.array(lon.data)
-    vgeo=IMEDIA['VGEO'][:, 5]                         #vgeo.shape renvoi (60, 50) donc choix d'une profondeur particulière
+    vgeo=IMEDIA['VGEO'][:, 5]                        
     vgeo= np.array(vgeo.data)
     P=IMEDIA['P'] 
     
